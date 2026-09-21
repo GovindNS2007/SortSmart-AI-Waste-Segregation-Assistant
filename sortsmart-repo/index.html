@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SortSmart AI — Waste Segregation Assistant</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-badge">♻️</div>
+        <div>
+          <h1>SortSmart AI</h1>
+          <p>Waste segregation assistant · SDG 11 &amp; 12</p>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+          <button class="icon-btn" id="infoBtn" title="About this project" aria-label="About">i</button>
+        </div>
+      </div>
+      <div class="legend">
+        <span class="legend-chip"><span class="dot" style="background:var(--wet)"></span>Wet</span>
+        <span class="legend-chip"><span class="dot" style="background:var(--dry-r)"></span>Dry · Recyclable</span>
+        <span class="legend-chip"><span class="dot" style="background:var(--dry-nr)"></span>Dry · Non-recyclable</span>
+        <span class="legend-chip"><span class="dot" style="background:var(--hazard)"></span>Hazardous</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="infoPanel">
+    <h2>What this is</h2>
+    <p>A working prototype for the 1M1B AI for Sustainability internship. Type any everyday item and get an instant bin recommendation, a plain-language reason, and a disposal tip.</p>
+    <h2>How answers are produced</h2>
+    <p>1. First, a local knowledge base of ~60 common items is checked (fast, offline-style lookup — this is the "retrieval" step).</p>
+    <p>2. If nothing matches closely, simple keyword rules cover broad categories (plastics, e-waste, paper, etc).</p>
+    <p>3. If still unsure, the assistant asks Claude directly for a judgment call, using the same category definitions — this only runs when you (the viewer) allow it.</p>
+    <div class="badge-row">
+      <span class="src-badge">Local Knowledge Base</span>
+      <span class="src-badge">Rule-Based Heuristic</span>
+      <span class="src-badge">AI Reasoning (Claude)</span>
+    </div>
+    <h2>Responsible AI</h2>
+    <p><b>Fairness:</b> matching works on common aliases and casual phrasing, not just packaging labels.</p>
+    <p><b>Transparency:</b> every answer shows a reason and which method produced it.</p>
+    <p><b>Ethics:</b> the assistant never guesses on hazardous or medical items — it always flags them for careful handling.</p>
+    <p><b>Privacy:</b> nothing you type is stored, tied to your identity, or sent anywhere except (optionally) to Claude for that one answer.</p>
+  </div>
+
+  <div id="chat"></div>
+
+  <div id="inputBar">
+    <input id="textInput" type="text" placeholder="Type an item, e.g. “used tea bag”…" autocomplete="off" />
+    <button id="sendBtn" aria-label="Send">➤</button>
+  </div>
+</div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
