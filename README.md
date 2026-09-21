@@ -67,19 +67,7 @@ python3 -m http.server 8000
 npx serve .
 ```
 
-Then visit `http://localhost:8000`.
 
----
-
-## 🚀 Deploy to GitHub Pages
-
-1. Push this folder to a GitHub repository.
-2. In the repo, go to **Settings → Pages**.
-3. Under **Source**, select the branch (usually `main`) and root folder (`/`).
-4. Save — GitHub will publish at `https://<your-username>.github.io/<repo-name>/`.
-5. Add that link to your submission alongside this README.
-
-*(The AI-reasoning fallback layer won't activate on GitHub Pages since it depends on the claude.ai Artifact runtime — the local knowledge base and heuristic layers work everywhere, including here.)*
 
 ---
 
